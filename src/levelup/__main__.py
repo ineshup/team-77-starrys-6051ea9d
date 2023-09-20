@@ -1,6 +1,6 @@
 import sys
 from levelup.ui import GameApp
-
+from levelup.map import map
 
 def main() -> None:
     app = GameApp()
@@ -12,4 +12,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    map.printMap()
     main()
