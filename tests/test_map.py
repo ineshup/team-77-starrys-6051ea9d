@@ -12,11 +12,3 @@ class testMap(TestCase):
         testObject = map()
         
         self.assertEqual(numPositions, testObject.getPositions())
-<<<<<<< HEAD
-=======
-
-    
-        
-        
-
->>>>>>> f733da9 (scott understood concept)
