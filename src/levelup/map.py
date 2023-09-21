@@ -2,10 +2,10 @@
 class map:
 
     map = []
-    dimensions = (9,9)
+    numPositions = 100
 
-    def getDimensions():
-        return dimensions
+    def getPositions(self):
+        return self.numPositions
 
     def updateMap(self, x_position, y_position):
         #if valideMove ==true:

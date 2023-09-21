@@ -4,9 +4,11 @@ from levelup.map import map
 
 class testMap(TestCase):
 
-    def testInit():
+    def testInit(self):
+
+        numPositions = 100
         testObject = map()
         
-        self.aseertEqual((9,9), map.dimensions())
+        self.assertEqual(numPositions, testObject.getPositions())
 
 
