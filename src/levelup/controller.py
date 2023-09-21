@@ -1,6 +1,7 @@
 import logging
 from dataclasses import dataclass
 from enum import Enum
+from levelup.character import character
 
 
 DEFAULT_CHARACTER_NAME = "Character"
@@ -42,15 +43,20 @@ class GameController:
     def create_character(self, character_name: str) -> None:
         if character_name is not None and character_name != "":
             self.status.character_name = character_name
+            character_object = character(character_name)
         else:
             self.status.character_name = DEFAULT_CHARACTER_NAME
 
     def move(self, direction: Direction) -> None:
+
+
         # TODO: Implement move - should call something on another class
         # TODO: Should probably also update the game results
         pass
 
     def set_character_position(self, xycoordinates: tuple) -> None:
+
+
         # TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
         pass
 

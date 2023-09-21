@@ -12,5 +12,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    map.printMap()
+    #mapObject = map
+    #mapObject.generateMap(mapObject,0,0)
+    #mapObject.printMap(mapObject)
     main()
