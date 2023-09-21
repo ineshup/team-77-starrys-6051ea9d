@@ -12,8 +12,3 @@ class testMap(TestCase):
         testObject = map()
         
         self.assertEqual(numPositions, testObject.getPositions())
-
-    def updateCharacterPositionOnMap(self):
-        
-        
-
