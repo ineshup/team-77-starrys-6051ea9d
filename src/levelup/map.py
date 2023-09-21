@@ -8,11 +8,11 @@ class map:
     def getPositions(self):
         return self.numPositions
 
-    def verifyBoundary(self, position, direction):
+    def verifyBoundary(self, Position, direction):
         statusMessage = ""
         newPosition = ()
         if(direction == 'n'):
-            newPosition = (Positon[0], Position[1]-1)
+            newPosition = (Position[0], Position[1]-1)
         if(direction =='e'):
             newPosition = (Position[0] + 1, Position[1])
         if(direction =='s'):
@@ -21,12 +21,12 @@ class map:
             newPosition = (Position[0] - 1, Position[1])
         #   
         if(newPosition[0] >9 or newPosition[0] <0 ):
-            return (false)
+            return (False)
         
         elif(newPosition[1]>9 or newPosition[1]<0):
-            return (false)
+            return (False)
         
-        return (true)
+        return (True)
 
     def generateMap(self, x_position, y_position):
         self.map = [[0 for i in range(9)] for j in range(9)]
