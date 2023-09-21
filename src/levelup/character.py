@@ -1,3 +1,4 @@
+from random import randrange
 class character:
 
     name = ""
@@ -19,9 +20,15 @@ class character:
         
 
     def __init__(self, character_name):
+        self.randomStartingPosition()
         self.name = character_name
 
     def getPosition(self):
         self.currentPosition
     def get_name(self):
-        return self.name
+        return self.name 
+    def randomStartingPosition(self):
+        x = (randrange(10))
+        y = (randrange(10))
+        currentPosition = startingPosition = (x,y)     
+
