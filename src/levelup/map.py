@@ -8,10 +8,25 @@ class map:
     def getPositions(self):
         return self.numPositions
 
-    def updateMap(self, x_position, y_position):
-        #if valideMove ==true:
-            map[character.get_x_position][character.get_y_position] = 0
-            map[x_position][y_position] = 1
+    def verifyBoundary(self, position, direction):
+        statusMessage = ""
+        newPosition = ()
+        if(direction == 'n'):
+            newPosition = (Positon[0], Position[1]-1)
+        if(direction =='e'):
+            newPosition = (Position[0] + 1, Position[1])
+        if(direction =='s'):
+            newPosition = (Position[0], Position[1]+1)
+        if(direction=='w'):
+            newPosition = (Position[0] - 1, Position[1])
+        #   
+        if(newPosition[0] >9 or newPosition[0] <0 ):
+            return (false)
+        
+        elif(newPosition[1]>9 or newPosition[1]<0):
+            return (false)
+        
+        return (true)
 
     def generateMap(self, x_position, y_position):
         self.map = [[0 for i in range(9)] for j in range(9)]
