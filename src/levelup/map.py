@@ -3,6 +3,7 @@ class map:
 
     map = []
     numPositions = 100
+    startingPosition = (0,0)
 
     def getPositions(self):
         return self.numPositions
