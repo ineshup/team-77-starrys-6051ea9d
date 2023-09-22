@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from enum import Enum
 from levelup.character import character
 from levelup.map import map
+from levelup.images import images
 
 
 DEFAULT_CHARACTER_NAME = "Character"
@@ -15,6 +16,8 @@ class GameStatus:
     # NOTE - Game status will have this as a tuple. The Position should probably be in a class
     current_position: tuple = (9,9)
     move_count: int = 0
+    def updateStatus(character_object):
+        character_name
 
 class Direction(Enum):
     NORTH = "n"
@@ -38,7 +41,10 @@ class GameController:
 
     def start_game(self, character_object):
 
+        print(images.introTitle())
         print("welcome "+ str(character_object.name) + " to stagecoach robbery!")
+
+
 
 
         
@@ -59,7 +65,13 @@ class GameController:
         #see build result
 
         characterPosition = character_object.currentPosition
-        return(map.verifyBoundary(map, characterPosition, direction))
+
+        validatedMove = map.verifyBoundary(map, characterPosition, direction)
+        if(validatedMove == True):
+            character_object.move(direction)
+            self.status.current_position = character_object.currentPosition
+            self.status.move_count = character_object.move_count
+        return(validatedMove)
 
 
         
