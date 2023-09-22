@@ -36,8 +36,10 @@ class GameController:
     def __init__(self):
         self.status = GameStatus()
 
-    def start_game(self):
-        pass
+    def start_game(self, character_object):
+
+        print("welcome "+ str(character_object.name) + "to stagecoach robbery!")
+        
 
     # Pre-implemented to demonstrate ATDD
     # TODO: Update this if it does not match your design (hint - it doesnt)
@@ -48,6 +50,7 @@ class GameController:
         else:
             self.status.character_name = DEFAULT_CHARACTER_NAME
 
+        return character_object
     def move(self, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class
         # TODO: Should probably also update the game results
