@@ -33,18 +33,24 @@ class GameApp:
             )
             direction = Direction(response)
             try:
-                self.controller.move(character_object, direction)
+                validatedMove = self.controller.move(character_object, direction)
             except InvalidMoveException:
-                if self.controller.move(direction) == 'n':
-                    print(f"Oh no!  Theres a canyon in the way.  You can't got that way!")
-                if self.controller.move(direction) == 'e':
-                    print(f"Don't go into the cactus forest!  It will hurt.  You can't got that way!")
-                if self.controller.move(direction) == 's':
-                    print(f"Where did that mountain come from?  We can't go over it.  You can't got that way!")
-                if self.controller.move(direction) == 'w':
-                    print(f"Oh no!  A river and you can't swim.  You can't got that way!")
+                print("useless")
             else:
-                print(f"You made a move {direction.name}")
+                if(validatedMove == False):
+                    print(f"You tried to move {direction.name}")
+                    if direction == Direction.NORTH:
+                        print(f"Oh no!  Theres a canyon in the way.  You can't go that way!")
+                    if direction == Direction.EAST:
+                        print(f"Don't go into the cactus forest!  It will hurt.  You can't go that way!")
+                    if direction == Direction.SOUTH:
+                        print(f"Where did that mountain come from?  We can't go over it.  You can't go that way!")
+                    if direction == Direction.WEST:
+                        print(f"Oh no!  A river and you can't swim.  You can't go that way!")
+
+                else:
+                    print(f"You succesfully made a move {direction.name}")
+                    character_object.move(direction)
                 
                 #character.set_character_position(direction.name)
                 

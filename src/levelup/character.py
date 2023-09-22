@@ -7,13 +7,13 @@ class character:
 
     def move(self,direction):
 
-        if(direction == 'n'):
+        if(direction == direction.NORTH):
             self.currentPosition = (self.currentPositon[0], self.currentPosition[1]-1)
-        if(direction =='e'):
+        if(direction ==direction.EAST):
             self.currentPosition = (self.currentPosition[0] + 1, self.currentPosition[1])
-        if(direction =='s'):
+        if(direction ==direction.SOUTH):
             self.currentPosition = (self.currentPosition[0], self.currentPosition[1]+1)
-        if(direction=='w'):
+        if(direction== direction.WEST):
             self.currentPosition = (self.currentPosition[0] - 1, self.currentPosition[1])
         
 

@@ -57,11 +57,11 @@ class GameController:
         # TODO: Should probably also update the game results
         print("")
         #see build result
-        print("print positionlist: " +str(character_object.currentPosition))
-        characterPosition = character_object.currentPosition
-        print(map.verifyBoundary(map, characterPosition, direction))
 
-        print("we got here")
+        characterPosition = character_object.currentPosition
+        return(map.verifyBoundary(map, characterPosition, direction))
+
+
         
 
     def set_character_position(self, xycoordinates: tuple) -> None:

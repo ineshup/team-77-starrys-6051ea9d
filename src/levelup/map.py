@@ -10,9 +10,7 @@ class map:
 
     def verifyBoundary(self, Position, direction):
 
-        print("direction value passed: "+ str(direction))
         statusMessage = ""
-        print("starting position: " + str(Position[0]) + str(Position[1]))
         newPosition = [0,0]
 
         if(direction == direction.NORTH):
@@ -23,19 +21,19 @@ class map:
             newPosition[1] = Position[1]
         if(direction == direction.SOUTH):
             newPosition[0] = Position[0]
-            newPosition[1] = Position[1]+1
-        if(direction== direction.SOUTH):
+            newPosition[1] = Position[1] + 1
+        if(direction== direction.WEST):
             newPosition[0] = Position[0] - 1
             newPosition[1] =  Position[1]
         #   
         print("new tested position: "+ str(newPosition[0]) + str(newPosition[1]))
         if(newPosition[0] >9 or newPosition[0] <0 ):
-            return (False)
+            return False
         
         elif(newPosition[1]>9 or newPosition[1]<0):
-            return (False)
+            return False
         
-        return (True)
+        return True
 
     def generateMap(self, x_position, y_position):
         self.map = [[0 for i in range(9)] for j in range(9)]
