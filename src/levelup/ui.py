@@ -34,7 +34,14 @@ class GameApp:
             try:
                 self.controller.move(direction)
             except InvalidMoveException:
-                print(f"You cannot move {direction}")
+                if self.controller.move(direction) == 'n':
+                    print(f"Oh no!  Theres a canyon in the way.  You can't got that way!")
+                if self.controller.move(direction) == 'e':
+                    print(f"Don't go into the cactus forest!  It will hurt.  You can't got that way!")
+                if self.controller.move(direction) == 's':
+                    print(f"Where did that mountain come from?  We can't go over it.  You can't got that way!")
+                if self.controller.move(direction) == 'w':
+                    print(f"Oh no!  A river and you can't swim.  You can't got that way!")
             else:
                 print(f"You moved {direction.name}")
                 
