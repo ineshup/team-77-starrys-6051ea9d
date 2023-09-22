@@ -14,17 +14,15 @@ class testMap(TestCase):
         self.assertEqual(numPositions, testObject.getPositions())
 
     def testWithinMapBoundaries(self):
-        Direction = 'e'
         testingCurrentPosition = [0,0]
 
-        verify = map.verifyBoundary(map, testingCurrentPosition, Direction)
+        verify = map.verifyBoundary(map, testingCurrentPosition, Direction.EAST)
 
         self.assertEqual(True, verify)
 
     def testOutOfMapBoundaries(self):
-        Direction = 'n'
         testingCurrentPosition = [0,0]
 
-        verify = map.verifyBoundary(map, testingCurrentPosition, Direction)
+        verify = map.verifyBoundary(map, testingCurrentPosition, Direction.NORTH)
 
         self.assertEqual(False, verify)
