@@ -31,4 +31,7 @@ class character:
         x = (randrange(10))
         y = (randrange(10))
         currentPosition = startingPosition = (x,y)     
+    def move_count(self):
+        x = startingPosition[0]+1    
+        y = startingPosition[0]+1
 
