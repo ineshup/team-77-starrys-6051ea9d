@@ -15,7 +15,7 @@ class testMap(TestCase):
 
     def testWithinMapBoundaries(self):
         Direction = 'e'
-        testingCurrentPosition = (0,0)
+        testingCurrentPosition = [0,0]
 
         verify = map.verifyBoundary(map, testingCurrentPosition, Direction)
 
@@ -23,7 +23,7 @@ class testMap(TestCase):
 
     def testOutOfMapBoundaries(self):
         Direction = 'n'
-        testingCurrentPosition = (0,0)
+        testingCurrentPosition = [0,0]
 
         verify = map.verifyBoundary(map, testingCurrentPosition, Direction)
 

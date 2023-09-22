@@ -2,8 +2,8 @@ from random import randrange
 class character:
 
     name = ""
-    currentPosition = (0,0)
-    startingPosition = (0,0)
+    currentPosition = [0,0]
+    startingPosition = [0,0]
 
     def move(self,direction):
 

@@ -2,6 +2,7 @@ import logging
 from dataclasses import dataclass
 from enum import Enum
 from levelup.character import character
+from levelup.map import map
 
 
 DEFAULT_CHARACTER_NAME = "Character"
@@ -50,10 +51,12 @@ class GameController:
     def move(self, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class
         # TODO: Should probably also update the game results
-        
+        print("")
         #see build result
+        characterPositon = character_object.getPosition()
+        print(map.verifyBoundary(map,characterPosition, Direction))
+        print("we got here")
         
-        pass
 
     def set_character_position(self, xycoordinates: tuple) -> None:
 

@@ -1,25 +1,32 @@
  
 class map:
 
-    map = []
+    map = [10,10]
     numPositions = 100
-    startingPosition = (0,0)
+    startingPosition = [0,0]
 
     def getPositions(self):
         return self.numPositions
 
     def verifyBoundary(self, Position, direction):
         statusMessage = ""
-        newPosition = ()
+        print("starting position: " + str(Position[0]) + str(Position[1]))
+        newPosition = [0,0]
+
         if(direction == 'n'):
-            newPosition = (Position[0], Position[1]-1)
+            newPosition[0] = Position[0]
+            newPosition[1] = Position[1]-1
         if(direction =='e'):
-            newPosition = (Position[0] + 1, Position[1])
+            newPosition[0] = Position[0] + 1
+            newPosition[1] = Position[1]
         if(direction =='s'):
-            newPosition = (Position[0], Position[1]+1)
+            newPosition[0] = Position[0]
+            newPosition[1] = Position[1]+1
         if(direction=='w'):
-            newPosition = (Position[0] - 1, Position[1])
+            newPosition[0] = Position[0] - 1
+            newPosition[1] =  Position[1]
         #   
+        print("current position: "+ str(newPosition[0]) + str(newPosition[1]))
         if(newPosition[0] >9 or newPosition[0] <0 ):
             return (False)
         
