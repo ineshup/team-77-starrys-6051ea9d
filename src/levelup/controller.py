@@ -38,7 +38,9 @@ class GameController:
 
     def start_game(self, character_object):
 
-        print("welcome "+ str(character_object.name) + "to stagecoach robbery!")
+        print("welcome "+ str(character_object.name) + " to stagecoach robbery!")
+
+
         
 
     # Pre-implemented to demonstrate ATDD
@@ -49,15 +51,16 @@ class GameController:
             character_object = character(character_name)
         else:
             self.status.character_name = DEFAULT_CHARACTER_NAME
-
         return character_object
-    def move(self, direction: Direction) -> None:
+    def move(self, character_object, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class
         # TODO: Should probably also update the game results
         print("")
         #see build result
-        characterPositon = character_object.getPosition()
-        print(map.verifyBoundary(map,characterPosition, Direction))
+        print("print positionlist: " +str(character_object.currentPosition))
+        characterPosition = character_object.currentPosition
+        print(map.verifyBoundary(map, characterPosition, direction))
+
         print("we got here")
         
 

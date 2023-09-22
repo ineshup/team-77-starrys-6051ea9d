@@ -22,10 +22,10 @@ class GameApp:
     def create_character(self):
         character = self.prompt("Enter character name", lambda x: len(x) > 0)
         character_object = self.controller.create_character(character)
-        
+
         return character_object
 
-    def move_loop(self):
+    def move_loop(self, character_object):
         while True:
             response = self.prompt(
                 f"Where would you like to go? {VALID_DIRECTIONS}\n(or ctrl+c to quit)",
@@ -33,7 +33,7 @@ class GameApp:
             )
             direction = Direction(response)
             try:
-                self.controller.move(direction)
+                self.controller.move(character_object, direction)
             except InvalidMoveException:
                 if self.controller.move(direction) == 'n':
                     print(f"Oh no!  Theres a canyon in the way.  You can't got that way!")
@@ -53,7 +53,7 @@ class GameApp:
     def start(self):
         character_object = self.create_character()
         self.controller.start_game(character_object)
-        self.move_loop()
+        self.move_loop(character_object)
 
     def quit(self):
         print(f"\n\n{self.controller.status}")

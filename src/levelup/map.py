@@ -9,24 +9,26 @@ class map:
         return self.numPositions
 
     def verifyBoundary(self, Position, direction):
+
+        print("direction value passed: "+ str(direction))
         statusMessage = ""
         print("starting position: " + str(Position[0]) + str(Position[1]))
         newPosition = [0,0]
 
-        if(direction == 'n'):
+        if(direction == direction.NORTH):
             newPosition[0] = Position[0]
             newPosition[1] = Position[1]-1
-        if(direction =='e'):
+        if(direction == direction.EAST):
             newPosition[0] = Position[0] + 1
             newPosition[1] = Position[1]
-        if(direction =='s'):
+        if(direction == direction.SOUTH):
             newPosition[0] = Position[0]
             newPosition[1] = Position[1]+1
-        if(direction=='w'):
+        if(direction== direction.SOUTH):
             newPosition[0] = Position[0] - 1
             newPosition[1] =  Position[1]
         #   
-        print("current position: "+ str(newPosition[0]) + str(newPosition[1]))
+        print("new tested position: "+ str(newPosition[0]) + str(newPosition[1]))
         if(newPosition[0] >9 or newPosition[0] <0 ):
             return (False)
         
