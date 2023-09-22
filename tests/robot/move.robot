@@ -28,11 +28,11 @@ Move W DnRight of board             9           9               7               
 
 *** Keywords ***
 Move character
-    [Arguments]    ${startingX}    ${startingY}    ${startingMoveCount}    ${direction}    ${endingX}    ${endingY}    ${endingMoveCount}
+    [Arguments]    ${startingX}    ${startingY}    ${startingMoveCount}    ${Direction}    ${endingX}    ${endingY}    ${endingMoveCount}
     Initialize character xposition with  ${startingX}
     Initialize character yposition with  ${startingY}
     Initialize character moveCount with  ${startingMoveCount}
-    Move in direction                    ${direction}
+    Move in direction                    ${Direction}
     Character xposition should be        ${endingX}
     Character yposition should be        ${endingY}
     Character moveCount should be        ${endingMoveCount}

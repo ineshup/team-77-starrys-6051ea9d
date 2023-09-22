@@ -11,7 +11,7 @@ DEFAULT_CHARACTER_NAME = "Character"
 #TODO: ADD THINGS YOU NEED FOR STATUS
 @dataclass
 class GameStatus:
-    running: bool = False
+    #running: bool = False
     character_name: str = DEFAULT_CHARACTER_NAME
     # NOTE - Game status will have this as a tuple. The Position should probably be in a class
     current_position: tuple = (0,0)
