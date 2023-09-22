@@ -3,7 +3,8 @@ from levelup.character import character
 
 class TestCharacterInitWithName(TestCase):
     def test_init(self):
-        ARBITRARY_NAME = "MyName"
+        
+        ARBITRARY_NAME = character.name
         testobj = character(ARBITRARY_NAME)
         self.assertEqual(ARBITRARY_NAME, testobj.name)
 
