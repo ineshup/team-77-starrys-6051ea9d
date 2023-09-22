@@ -1,5 +1,6 @@
 from unittest import TestCase
 from levelup.character import character
+from levelup.controller import Direction
 
 class TestCharacterInitWithName(TestCase):
     def test_init(self):
@@ -13,7 +14,7 @@ class TestCharacterInitWithName(TestCase):
         direction = 'e'
         characterObject = character("testName")
         startingPosition = characterObject.startingPosition
-        characterObject.move(direction)
+        characterObject.move(Direction.EAST)
 
         if(direction == 'n'):
             expectedposition = (startingPositon[0], startingPosition[1])
