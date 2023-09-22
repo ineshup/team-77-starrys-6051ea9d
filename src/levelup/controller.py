@@ -14,10 +14,9 @@ class GameStatus:
     running: bool = False
     character_name: str = DEFAULT_CHARACTER_NAME
     # NOTE - Game status will have this as a tuple. The Position should probably be in a class
-    current_position: tuple = (9,9)
+    current_position: tuple = (0,0)
     move_count: int = 0
-    def updateStatus(character_object):
-        character_name
+    
 
 class Direction(Enum):
     NORTH = "n"
@@ -67,10 +66,12 @@ class GameController:
         characterPosition = character_object.currentPosition
 
         validatedMove = map.verifyBoundary(map, characterPosition, direction)
+        character_object.updateMoveCount()
+        self.status.move_count = character_object.moveCount
         if(validatedMove == True):
             character_object.move(direction)
             self.status.current_position = character_object.currentPosition
-            self.status.move_count = character_object.moveCount
+            
         return(validatedMove)
 
 

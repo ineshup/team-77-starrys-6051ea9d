@@ -16,8 +16,10 @@ class character:
             self.currentPosition = (self.currentPosition[0], self.currentPosition[1]+1)
         if(direction== direction.WEST):
             self.currentPosition = (self.currentPosition[0] - 1, self.currentPosition[1])
-        self.moveCount = self.moveCount + 1
         
+        
+    def updateMoveCount(self):
+        self.moveCount = self.moveCount + 1
 
     def __init__(self, character_name):
         self.randomStartingPosition()
@@ -30,7 +32,8 @@ class character:
     def randomStartingPosition(self):
         x = (randrange(10))
         y = (randrange(10))
-        currentPosition = startingPosition = (x,y)     
+        self.currentPosition[0] = self.startingPosition[0] = x
+        self.currentPosition[1]= self.startingPosition[1] = y     
     #def move_count(self):
     #    x = startingPosition[0]+1    
     #    y = startingPosition[0]+1
