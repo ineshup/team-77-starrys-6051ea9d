@@ -4,6 +4,7 @@ class character:
     name = ""
     currentPosition = [0,0]
     startingPosition = [0,0]
+    moveCount = 0
 
     def move(self,direction):
 
@@ -15,8 +16,7 @@ class character:
             self.currentPosition = (self.currentPosition[0], self.currentPosition[1]+1)
         if(direction== direction.WEST):
             self.currentPosition = (self.currentPosition[0] - 1, self.currentPosition[1])
-        
-
+        self.moveCount = self.moveCount + 1
         
 
     def __init__(self, character_name):
@@ -31,7 +31,7 @@ class character:
         x = (randrange(10))
         y = (randrange(10))
         currentPosition = startingPosition = (x,y)     
-    def move_count(self):
-        x = startingPosition[0]+1    
-        y = startingPosition[0]+1
+    #def move_count(self):
+    #    x = startingPosition[0]+1    
+    #    y = startingPosition[0]+1
 
