@@ -70,7 +70,7 @@ class GameController:
         if(validatedMove == True):
             character_object.move(direction)
             self.status.current_position = character_object.currentPosition
-            self.status.move_count = character_object.move_count
+            self.status.move_count = character_object.moveCount
         return(validatedMove)
 
 

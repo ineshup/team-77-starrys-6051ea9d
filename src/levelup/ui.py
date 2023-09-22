@@ -50,7 +50,6 @@ class GameApp:
 
                 else:
                     print(f"You succesfully made a move {direction.name}")
-                    character_object.move(direction)
                 
                 #character.set_character_position(direction.name)
                 
