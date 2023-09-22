@@ -43,7 +43,7 @@ class GameApp:
                 if self.controller.move(direction) == 'w':
                     print(f"Oh no!  A river and you can't swim.  You can't got that way!")
             else:
-                print(f"You moved {direction.name}")
+                print(f"You made a move {direction.name}")
                 
                 #character.set_character_position(direction.name)
                 
